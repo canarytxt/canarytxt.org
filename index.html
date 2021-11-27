@@ -81,138 +81,14 @@ recent_changes: >
     The date format for Expires has changed to ISO 8601. An example of the new format is <code>Expires: 2021-12-31T18:37:07.000Z</code>.
 ---
 
-<div id="txt-notification">
-    <div class="notification is-success is-pulled">
-        <button onclick="removeNotification()" class="delete"></button>
-        <h1>Your canary.txt file has been copied to your clipboard!</h1>
-    </div>
-</div>
 
-<section class="section">
-    <div class="container">
-        <h1 class="title">Summary</h1>
-        <p>
-            “This website and the standard is under construction please drop by https://github.com/canarytxt/canarytxt.org/issues/4”
-        </p>
-    </div>
-</section>
 
-<section class="section">
-    <div class="container">
-        <h1 class="title">Step 1</h1>
-        <p>Create a text file called <code>canary.txt</code> under the <code>.well-known</code> directory of your project.</p>
-        <br>
-        <form id="genform">
-            {% if page.recent_changes %}
-                <article class="message is-warning">
-                    <div class="message-header">
-                        Recent changes to the specification
-                    </div>
-                    <div class="message-body">
-                        <p>{{ page.recent_changes }}</p>
-                    </div>
-                </article>
-            {% endif %}
-
-            <article id="validation-errors-box" class="message is-danger is-hidden">
-                <div class="message-body">
-                    <p>
-                        The Contact field failed to validate. Please ensure it starts with <code>mailto:</code> for e-mail addresses,
-                        <code>tel:</code> for telephone numbers, or <code>https://</code> for web URIs.
-                    </p>
-                    <p>For example, <code>mailto:contact@example.com</code>.</p>
-                </div>
-            </article>
-
-            {% for directive in page.directives %}
-                <fieldset class="box" id="{{directive.id}}">
-                    <legend class="label">
-                        {{ directive.name }}
-                        {% for tag in directive.tags %}
-                            <span class="tag {{ page.directive_tags[tag] }}">{{ tag }}</span>
-                        {% endfor %}
-                    </legend>
-                    <p class="help">
-                        {{ directive.help }} See 
-                        <a target="_blank" rel="noopener" 
-                           href="https://tools.ietf.org/html/draft-foudil-securitytxt-12#section-3.5.{{directive.spec}}">
-                            the full description of {{ directive.name }}
-                        </a>
-                    </p>
-                    <ul class="list-of-inputs">
-                        {% if directive.input == 'datetime' %}
-                            <li class="field has-addons">
-                                <div class="control">
-                                    <input type="date" placeholder="YYYY-MM-DD" class="input" required>
-                                </div>
-                                <div class="control">
-                                    <input type="time" placeholder="HH:MM" class="input" required>
-                                </div>
-                            </li>
-                        {% else %}
-                            <li class="field">
-                                <div class="control">
-                                    <input class="input" placeholder="{{ directive.placeholder }}" type="{{ directive.input }}"
-                                        {% if directive.tags contains 'Required' %} required {% endif %}
-                                        {% if directive.id == 'contact' %}
-                                            onchange='autoprefixEmail(this);'
-                                        {% endif %}
-                                    >
-                                    {% if directive.id == 'contact' %}
-                                        <p class="is-hidden help is-danger">
-                                            Each contact field must begin with https:// for web URIs; tel: for telephone numbers; or mailto: for e-mails.
-                                        </p>
-                                    {% endif %}
-                                </div>
-                            </li>
-                        {% endif %}
-                    </ul>
-                    <div class="field">
-                        <div class="control">
-                            <button type="button" class="button" onclick="addAlternative(this)"
-                                {% if directive.tags contains 'Only 1 allowed' %} disabled {% endif %}
-                            >
-                                Add another alternative
-                            </button>
-                        </div>
-                    </div>
-                </fieldset>
-            {% endfor %}
-           <input class="button is-success" type="submit" value="Generate canary.txt file">
-        </form>
-    </div>
-</section>
-
-<section class="section">
-    <div class="container">
-        <h1 class="title" id="step-two">Step 2</h1>
-        <p>You are ready to go! Publish your canary.txt file. If you want to give security researchers confidence that your canary.txt file is authentic, and not planted by an attacker, consider <a target="_blank" rel="noopener" href="https://tools.ietf.org/html/draft-foudil-securitytxt-12#section-3.3">digitally signing</a> the file with an OpenPGP cleartext signature.</p>
-        <div class="field">
-          <div class="control">
-            <textarea id="text-to-copy" class="textarea" readonly></textarea>
-          </div>
-        </div>
-        <div class="field">
-          <div class="control">
-            <button id="copy-button" class="button button-primary" disabled="true" onclick="copyTextarea()">Copy to clipboard</button>
-          </div>
-        </div>
-    </div>
-</section>
 
 <section class="section">
     <div class="container content">
         <h1 class="title">Frequently asked questions</h1>
         <h5>What is the main purpose of canary.txt?</h5>
-        <p>The main purpose of canary.txt is to help make things easier for companies and security researchers when trying to secure platforms. Thanks to canary.txt, security researchers can easily get in touch with companies about security issues.</p>
-        <h5>Is canary.txt an <a href="https://en.wikipedia.org/wiki/Request_for_Comments"><abbr title="Request For Comments">RFC</abbr></a>?</h5>
-        <p>canary.txt is currently an Internet draft that has been submitted for <abbr title="Request For Comments">RFC</abbr> review. This means that canary.txt is still in the early stages of development. We welcome contributions from the public: <a href="https://github.com/securitytxt/security-txt">https://github.com/securitytxt/security-txt</a></p>
-        <h5>Where should I put the canary.txt file?</h5>
-        <p>For websites, the canary.txt file should be placed under the <code>/.well-known/</code> path (<code>/.well-known/canary.txt</code>) [<a href="https://tools.ietf.org/html/rfc8615"><abbr title="Request For Comments">RFC</abbr>8615</a>]. It can also be placed in the root directory (<code>/canary.txt</code>) of a website, especially if the <code>/.well-known/</code> directory cannot be used for technical reasons, or simply as a fallback. The file can be placed in both locations of a website at the same time.</p>
-                <h5>Are there any settings I should apply to the file?</h5>
-                <p>The canary.txt file should have an Internet Media Type of <code>text/plain</code> and must be served over HTTPS.</p>
-        <h5>Will adding an email address expose me to spam bots?</h5>
-        <p>The email value is an optional field. If you are worried about spam, you can set a URI as the value and link to your security policy.</p>
+        <p>This website and the standard is under construction please drop by https://github.com/canarytxt/canarytxt.org/issues/4</p>
     </div>
 </section>
 
