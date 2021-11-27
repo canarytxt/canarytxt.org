@@ -1,2 +1,7 @@
-image:
-  file: Dockerfile
+tasks:
+  - init: >
+      pip install --user xml2rfc
+      gem install kramdown-rfc2629
+  - name: make
+    command: |
+      make
