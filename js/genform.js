@@ -24,7 +24,7 @@ genform.addEventListener("submit", function(event){
         document.getElementById('validation-errors-box').classList.add('is-hidden');
     }
 
-    generate('security.txt', [
+    generate('canary.txt', [
         "contact", "expires", "encryption", "acknowledgments", "preferredLanguages", "canonical", "policy", "hiring"
     ]);
 
