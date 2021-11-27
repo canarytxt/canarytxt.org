@@ -2,6 +2,7 @@ tasks:
   - init: >
       pip install --user xml2rfc
       gem install kramdown-rfc2629
+      gem install net-http-persistent
   - name: make
     command: |
       make
