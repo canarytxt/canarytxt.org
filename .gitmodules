@@ -1,3 +1,0 @@
-[submodule "src/IETF/lib"]
-	path = src/IETF/lib
-	url = https://github.com/martinthomson/i-d-template
