@@ -1,6 +1,5 @@
 # canarytxt.org
 
-![The website of the canary.txt project, a proposed standard which allows websites to define a warrant canary](https://user-images.githubusercontent.com/18099289/42649227-5bbbb1f4-8609-11e8-988c-ad7b41b8873e.png)
 
 ## Contributing
 
