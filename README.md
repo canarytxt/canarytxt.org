@@ -1,4 +1,6 @@
-## Welcome to GitHub Pages
+## A proposed standard which allows websites to define warrant canary's.
+
+
 
 You can use the [editor on GitHub](https://github.com/ghuntley/canarytxt.org/edit/trunk/README.md) to maintain and preview the content for your website in Markdown files.
 
