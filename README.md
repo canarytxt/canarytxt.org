@@ -1,39 +1,21 @@
-## A proposed standard which allows websites to define warrant canary's.
+# securitytxt.org
 
+![The website of the security.txt project, a proposed standard which allows websites to define security policies](https://user-images.githubusercontent.com/18099289/42649227-5bbbb1f4-8609-11e8-988c-ad7b41b8873e.png)
 
+<a href="https://www.buymeacoffee.com/edoverflow" target="_blank" rel="noopener"><img src="https://www.buymeacoffee.com/assets/img/custom_images/purple_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
 
-You can use the [editor on GitHub](https://github.com/ghuntley/canarytxt.org/edit/trunk/README.md) to maintain and preview the content for your website in Markdown files.
+## Contributing
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+We welcome contributions from the public.
 
-### Markdown
+### Using the issue tracker 💡
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+The issue tracker is the preferred channel for bug reports and features requests. [![GitHub issues](https://img.shields.io/github/issues/securitytxt/securitytxt.org.svg?style=flat-square)](https://github.com/securitytxt/securitytxt.org/issues)
 
-```markdown
-Syntax highlighted code block
+### Issues and labels 🏷
 
-# Header 1
-## Header 2
-### Header 3
+Our bug tracker utilizes several labels to help organize and identify issues.
 
-- Bulleted
-- List
+### Guidelines for bug reports 🐛
 
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/ghuntley/canarytxt.org/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+Use the GitHub issue search — check if the issue has already been reported.
