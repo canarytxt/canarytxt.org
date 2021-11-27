@@ -6,7 +6,7 @@
 
 We welcome contributions from the public.
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/gitpod-io/template-nixos)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/canarytxt/canarytxt.org)
 
 ### Using the issue tracker 💡
 
