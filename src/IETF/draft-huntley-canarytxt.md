@@ -1,7 +1,7 @@
 ---
 title: A File Format to Aid in Security Vulnerability Disclosure
 abbrev: canary.txt
-docname: draft-huntley-securitytxt-1
+docname: draft-huntley-securitytxt-0
 ipr: trust200902
 cat: info
 pi:
